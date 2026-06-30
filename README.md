@@ -62,4 +62,4 @@ The website hosting this portfolio is built to showcase my core web development 
 *   **Live WakaTime Status**: A secure server-side API route that safely fetches my active VS Code typing heartbeats to show when I am online.
 
 ---
-*Connect with me on [Telegram](https://t.me/Kramarich0) or drop me an email at [karen.avakov2@gmail.com](mailto:karen.avakov2@gmail.com)*
+*Connect with me on [Telegram](https://t.me/float_inf) or drop me an email at [karen.avakov2@gmail.com](mailto:karen.avakov2@gmail.com)*
