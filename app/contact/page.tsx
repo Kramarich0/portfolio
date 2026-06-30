@@ -8,7 +8,7 @@ import { TelegramIcon } from "@/app/components/telegram-icon";
 const socials = [
 	{
 		icon: <TelegramIcon size={20} />,
-		href: "https://t.me/@Float_inf",
+		href: "https://t.me/Float_inf",
 		label: "Telegram",
 		handle: "@Float_inf",
 	},

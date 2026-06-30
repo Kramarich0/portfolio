@@ -1,33 +1,65 @@
-<div align="center">
-    <a href="https://chronark.com"><h1 align="center">chronark.com</h1></a>
+# Karen Mnatsakanov (Kramarich) | TypeScript Fullstack / Frontend Developer 🌐
 
-My personal website, built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [Upstash](https://upstash.com?ref=chronark.com), [Contentlayer](https://www.contentlayer.dev/) and deployed to [Vercel](https://vercel.com/).
+Welcome to my portfolio repository! 
 
-</div>
+I am a **TypeScript Fullstack Developer** with a strong focus on **Frontend engineering (React & Next.js)**. My passion lies in building interactive user interfaces, implementing robust state management, and crafting secure full-stack web applications.
 
-<br/>
+---
 
+## 🛠️ Core Technology Stack
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/upstash/clone?demo-title=Next.js%20Portfolio%20with%20Pageview%20Counter&demo-description=Portfolio%20site%20with%20pageview%20counter%2C%20built%20with%20Next.js%2013%20App%20Router%2C%20Contentlayer%2C%20and%20Upstash%20Redis.&demo-url=https%3A%2F%2Fchronark.com%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F1DA8n5a6WaP9p1FXf9LmUY%2Fc6264fa2732355787bf657df92dda8a1%2FCleanShot_2023-04-17_at_14.17.37.png&project-name=Next.js%20Portfolio%20with%20Pageview%20Counter&repository-name=nextjs-portfolio-pageview-counter&repository-url=https%3A%2F%2Fgithub.com%2Fchronark%2Fchronark.com&from=templates&integration-ids=oac_V3R1GIpkoJorr6fqyiwdhl17)
+*   **Primary Languages**: TypeScript, JavaScript (ES6+).
+*   **Frontend**: React, Next.js (App & Pages Router), Tailwind CSS, Framer Motion, Vite.
+*   **Backend & Databases**: Node.js, Bun, Hono, Express.js, PostgreSQL, Prisma ORM, Drizzle ORM, Upstash Redis.
+*   **Desktop Shell**: Electron (for wrapping React applications).
 
-## Running Locally
+---
 
+## 📂 Project Directory
 
-```sh-session
-git clone https://github.com/chronark/chronark.com.git
-cd chronark.com
-```
+Here is a categorized map of my main TypeScript/React work, followed by sandbox experiments and academic coursework.
 
+### 🛡️ 1. Core Stack: Doxynix Developer & Security Suite
+My primary personal project ecosystem focused on codebase analysis, automated documentation, and security anomaly detection.
 
-Create a `.env` file similar to [`.env.example`](https://github.com/chronark/chronark.com/blob/main/.env.example).
+*   **[doxynix](./content/projects/doxynix.mdx)** — A codebase dependency visualizer and MDX documentation generator for GitHub organizations. 
+    * *React, Next.js, PostgreSQL, Prisma.*
+*   **[doxynix-siem](./content/projects/doxynix-siem.mdx)** — An application-level SIEM dashboard and DLP secret scanner monitoring structured production logs.
+    * *Bun Workspaces, Hono, Vite, React 19, Drizzle ORM, Tailwind v4.*
+*   **[doxynix-cli](./content/projects/doxynix-cli.mdx)** — A lightweight command-line interface to audit local directory structures and scan for sensitive credentials before push events.
+    * *TypeScript, Bun, Commander.js.*
+*   **[doxynix-action](./content/projects/doxynix-action.mdx)** — A CI/CD GitHub Action acting as a security gatekeeper for incoming Pull Requests.
+    * *Node.js, GitHub REST/Webhooks APIs.*
 
-Then install dependencies and run the development server:
-```sh-session
-pnpm install
-pnpm dev
-```
+### 🦈 2. Core Stack: SharkFlow & Quasar (React & JS Applications)
+Web and desktop applications built to explore client-side state management, performance, and API integration.
 
+*   **[sharkflow](./content/projects/sharkflow.mdx)** — An interactive React Kanban board client styled with fluid, responsive Tailwind CSS layouts.
+*   **[sharkflow-api](./content/projects/sharkflow-api.mdx)** — An Express.js backend engine using Redis Pub/Sub for low-latency client synchronizations.
+    * *Express.js, Prisma, PostgreSQL, Redis, WebSockets.*
+*   **[quasar](./content/projects/quasar.mdx)** — A desktop web browser UI built with React and Tailwind CSS, packaged inside an Electron shell. Highlights tab-pooling for RAM optimization.
+    * *Electron, React, Tailwind CSS, Canvas API, IndexedDB.*
 
-## Cloning / Forking
+### 🎓 3. Academic Coursework & Sandbox Experiments (Non-Core Stack)
+Projects created during university courses, group assignments, or experimental explorations of other languages and environments.
 
-Please remove all of my personal information (projects, images, etc.) before deploying your own version of this site.
+*   **[sharkflow-mobile](./content/projects/sharkflow-mobile.mdx)** — A native Android companion app for SharkFlow developed as part of a multi-platform group project.
+    * *Kotlin, Android SDK (MVVM, Coroutines).*
+*   **[car-shooter](./content/projects/car-shooter.mdx)** — A 2D desktop arcade shooter built for coursework, exploring WPF XAML and spatial grid partitioning for collision optimization.
+    * *C#, WPF, MVVM.*
+*   **[project-cars](./content/projects/project-cars.mdx)** — An academic driving simulator sandbox exploring behavioral cloning data logging.
+    * *Python, Pygame, TensorFlow/Keras.*
+*   **[armor-echo](./content/projects/armor-echo.mdx)** — An exploratory 3D tank combat prototype built to learn Unity's physics and scripting engine.
+    * *Unity 3D, C#.*
+
+---
+
+## ⚡ Portfolio Infrastructure
+
+The website hosting this portfolio is built to showcase my core web development skills:
+*   **Dynamic MDX Compilation**: Uses `Contentlayer` to compile static Markdown files into typed React views.
+*   **Edge Telemetry**: Utilizes Next.js Edge Routes and `Upstash Redis` to track and display project pageviews securely via SHA-256 IP hashing.
+*   **Live WakaTime Status**: A secure server-side API route that safely fetches my active VS Code typing heartbeats to show when I am online.
+
+---
+*Connect with me on [Telegram](https://t.me/Kramarich0) or drop me an email at [karen.avakov2@gmail.com](mailto:karen.avakov2@gmail.com)*

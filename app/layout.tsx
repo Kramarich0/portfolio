@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/Kramarich.svg",
   },
 };
 

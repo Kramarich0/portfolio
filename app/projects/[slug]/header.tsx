@@ -10,10 +10,15 @@ type Props = {
 		description: string;
 		repository?: string;
 	};
-
 	views: number;
+	githubData: {
+		stars: number;
+		forks: number;
+		lastUpdated: string;
+	} | null;
 };
-export const Header: React.FC<Props> = ({ project, views }) => {
+
+export const Header: React.FC<Props> = ({ project, views, githubData }) => {
 	const ref = useRef<HTMLElement>(null);
 	const [isIntersecting, setIntersecting] = useState(true);
 
@@ -35,7 +40,6 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 		const observer = new IntersectionObserver(([entry]) =>
 			setIntersecting(entry.isIntersecting),
 		);
-
 		observer.observe(ref.current);
 		return () => observer.disconnect();
 	}, []);
@@ -52,7 +56,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 					}`}
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
-					<div className="flex justify-between gap-8">
+					<div className="flex justify-between gap-8 items-center">
 						<span
 							title="View counter for this page"
 							className={`duration-200 hover:font-medium flex items-center gap-1 ${isIntersecting
@@ -86,7 +90,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 					</Link>
 				</div>
 			</div>
-			<div className="container mx-auto relative isolate overflow-hidden  py-24 sm:py-32">
+			<div className="container mx-auto relative isolate overflow-hidden py-24 sm:py-32">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 					<div className="mx-auto max-w-2xl lg:mx-0">
 						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
@@ -95,13 +99,42 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 						<p className="mt-6 text-lg leading-8 text-zinc-300">
 							{project.description}
 						</p>
+
+						{githubData && (
+							<div className="flex flex-wrap items-center justify-center gap-3 mt-8 text-xs text-zinc-400 select-none">
+								<span className="flex items-center gap-1.5 border border-zinc-800 px-3 py-1.5 rounded-md bg-zinc-900/30">
+									<span className="text-yellow-500">★</span> {githubData.stars} stars
+								</span>
+								<span className="flex items-center gap-1.5 border border-zinc-800 px-3 py-1.5 rounded-md bg-zinc-900/30">
+									<span className="text-blue-400">⌥</span> {githubData.forks} forks
+								</span>
+								{githubData.lastUpdated && (
+									<span className="flex items-center gap-1.5 border border-zinc-800 px-3 py-1.5 rounded-md bg-zinc-900/30">
+										Active: {githubData.lastUpdated}
+									</span>
+								)}
+							</div>
+						)}
 					</div>
 
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-						<div className="grid grid-cols-1 gap-y-6 gap-x-8 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+						<div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-base font-semibold leading-7">
 							{links.map((link) => (
-								<Link target="_blank" key={link.label} href={link.href}>
-									{link.label} <span aria-hidden="true">&rarr;</span>
+								<Link
+									target="_blank"
+									key={link.label}
+									href={link.href}
+									className="group relative flex items-center gap-1.5 text-zinc-300 hover:text-zinc-100 transition-all duration-300 select-none"
+								>
+									<span className="relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-zinc-100 after:transition-all after:duration-300 group-hover:after:w-full">
+										{link.label}
+									</span>
+									<span
+										className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-active:translate-x-2"
+										aria-hidden="true"
+									>
+										&rarr;
+									</span>
 								</Link>
 							))}
 						</div>
