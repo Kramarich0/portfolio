@@ -1,0 +1,26 @@
+---
+title: "SharkFlow API"
+description: "The scalable, highly optimized backend engine powering the SharkFlow ecosystem, built with Express, Prisma, Redis, and PostgreSQL."
+date: "2026-04-10"
+repository: "Kramarich0/SharkFlow"
+published: true
+---
+
+# SharkFlow REST API Backend
+
+This is the core backend engine powering the entire SharkFlow multi-platform task and board management ecosystem. 
+
+Designed for high concurrency, low latency, and secure data sync, the API acts as the single source of truth for the React web client and the native Android client.
+
+## 🛠️ Architecture & Core Stack
+
+*   **Framework**: Express.js with strictly typed TypeScript routing.
+*   **Database & ORM**: PostgreSQL database mapped via **Prisma ORM** for clean, typesafe database queries.
+*   **Caching & Sessions**: **Redis**-based in-memory store for session caching and WebSocket pub/sub management.
+*   **Security**: JSON Web Tokens (JWT) for secure session authentication, robust request body validation, and cors/csrf middlewares.
+
+## 🚀 Key Technical Features
+
+*   **Optimized Query Execution**: Designed complex relational SQL queries using Prisma to fetch nested boards, tasks, and subtasks in a single database round-trip.
+*   **Real-Time State Synchronization**: Integrates a WebSocket server coupled with Redis Pub/Sub to instantly broadcast board changes (e.g., moving a task card) to all active web and mobile clients.
+*   **Robust Middleware System**: Implemented automated request validation pipelines, custom error handling middlewares, and route guards based on user authorization roles.

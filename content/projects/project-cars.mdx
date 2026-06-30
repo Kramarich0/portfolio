@@ -1,0 +1,29 @@
+---
+title: "Project Cars AI"
+description: "An imitation learning self-driving car simulation built with Python, Pygame, and TensorFlow/Keras using behavioral cloning."
+date: "2026-05-15"
+repository: "Kramarich0/Project-cars"
+published: true
+---
+
+# Project Cars AI
+
+Project Cars is a 2D autonomous driving simulator that utilizes **Behavioral Cloning (Imitation Learning)** to train an AI driver based on human input. 
+
+Instead of hardcoded navigation heuristics, the system records driving telemetry (position, speed, steering angle, and keypresses) from a human player, processes the dataset, and trains a deep neural network to autonomously pilot the vehicle.
+
+## 🛠️ Machine Learning Pipeline & Stack
+
+*   **Simulation & Visualization**: Built in Python using `pygame` to capture telemetry and render real-time trajectories.
+*   **Data Processing**: Uses `pandas` for dataset manipulation and `scikit-learn` (`StandardScaler` and `PolynomialFeatures` of degree 5) to expand and normalize features before training.
+*   **Model Architecture**: A deep feedforward neural network built with `TensorFlow / Keras`:
+    *   Input layer dynamically mapped to 5th-degree polynomial features.
+    *   Four fully connected dense layers (512 -> 256 -> 128 -> 64) utilizing the **SELU** (Scaled Exponential Linear Unit) activation function for self-normalizing properties.
+    *   Linear output layer predicting continuous target variables: `Speed` and `Angle`.
+*   **Evaluation & Analytics**: Generates training loss/MAE curves using `matplotlib` and displays feature correlation matrices via `seaborn` heatmaps.
+
+## 🚀 Key Features
+
+*   **Telemetry Recorder**: Automatically captures game states and exports structured behavioral data into CSV format (`car_data.csv`).
+*   **Autopilot Engine**: Loads pre-trained network weights (`.h5` files) to control the car's steering physics dynamically in response to coordinate shifts.
+*   **Trajectory Visualization**: Evaluates performance by plotting comparative curves of the player's path versus the AI's predicted trajectory.

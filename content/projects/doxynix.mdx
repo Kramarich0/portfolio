@@ -1,0 +1,29 @@
+---
+title: "doxynix"
+description: "AI-Powered codebase analysis, automated documentation, and quality metrics engine for GitHub repositories."
+date: "2026-06-15"
+url: "https://doxynix.space"
+repository: "doxynix/doxynix"
+published: true
+---
+
+# Doxynix
+
+Doxynix is a modern, high-performance SaaS platform designed to automatically analyze codebases, generate clean developer documentation, and calculate code quality metrics directly from GitHub repositories. 
+
+It bridges the gap between massive legacy codebases and developer onboarding, transforming raw code into structured, easy-to-digest engineering insights.
+
+## 🛠️ Tech Stack & Architecture
+
+Doxynix is built with a focus on speed, modularity, and absolute typesafety:
+
+*   **Frontend**: Next.js (App Router), React, and Tailwind CSS.
+*   **Database & Auth**: PostgreSQL, Prisma ORM, and Next-Auth (migrating to Better-Auth).
+*   **Integrations**: Native GitHub Apps integration, managing secure webhooks, organization installation IDs, and token exchange.
+*   **AI Engine**: Custom multi-agent pipeline orchestrating LLMs (OpenAI, Claude) to extract architectural patterns and generate documentation.
+
+## 🚀 Key Features
+
+*   **Interactive Code Map**: Visually renders the dependency graph and topology of any repository, identifying hotspots, cyclomatic complexity, and circular dependencies.
+*   **Automated MDX Generator**: Generates comprehensive "How-To Guides," API references, and Architectural Decision Records (ADRs) with 0-effort.
+*   **Context Sanitization**: Automatically scans outgoing code payloads for sensitive data (API keys, private keys, database passwords) using `secretlint` and custom regex filters before sending them to external LLMs.

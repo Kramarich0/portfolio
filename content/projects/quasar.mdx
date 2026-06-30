@@ -1,0 +1,26 @@
+---
+title: "Quasar Browser"
+description: "A desktop web browser client built with Electron, React, and Tailwind CSS, featuring tab-view pooling and interactive canvas rendering."
+date: "2026-06-10"
+repository: "Kramarich0/Quasar"
+published: true
+---
+
+# Quasar Browser
+
+Quasar is a desktop web browser UI built with **React**, **Vite**, and **Tailwind CSS**, packaged inside the **Electron** shell. 
+
+This project was built to explore complex client-side state, custom React hook design, and performant asset rendering outside the standard web sandbox.
+
+## 🛠️ Tech Stack & React Architecture
+
+*   **Frontend**: React (Functional Components) & Tailwind CSS, optimized with Vite for fast local builds.
+*   **Electron Integration**: Implements safe IPC channels via `contextBridge` to isolate DOM environments from native OS operations.
+*   **Memory Optimization**: Managed active browser tabs through a pool structure, dynamically releasing and cleaning web cache memory.
+*   **HTML5 Canvas**: Powers the interactive homepage start-screen (`animation.js`) rendering high-FPS custom particle physics and mouse-interaction animations.
+
+## 🚀 Key Client Features
+
+*   **Debounced Autocomplete**: Custom React hooks handling asynchronous API calls to Google & DuckDuckGo for instantaneous search suggestions.
+*   **Session & Incognito Controller**: Real-time management of partitioned guest tab configurations, isolating cookie structures on-the-fly.
+*   **Web Audio Engine**: Integrated a custom declarative manager to load and play ambient audio context without blocking UI updates.

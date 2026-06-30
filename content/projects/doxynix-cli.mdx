@@ -1,0 +1,26 @@
+---
+title: "@doxynix/cli"
+description: "A fast, typesafe command-line interface (CLI) to analyze local repositories, generate instant Markdown documentation, and audit security compliance directly from the terminal."
+date: "2026-06-20"
+repository: "doxynix/cli"
+published: true
+---
+
+# Doxynix CLI
+
+`@doxynix/cli` is the official command-line interface for the Doxynix platform, allowing developers to analyze code, generate documentation, and run security audits directly on their local machines before pushing to remote repositories.
+
+By bringing the power of Doxynix directly to the terminal, it integrates seamlessly into the daily developer workflow, minimizing friction and maximizing local productivity.
+
+## 🛠️ Tech Stack & Key Integrations
+
+*   **Runtime**: Node.js / Bun for blistering local startup performance.
+*   **Syntax**: Strictly typed TypeScript compiling down to a lightweight executable.
+*   **Core Packages**: Built on top of `commander` for robust CLI routing, argument parsing, and interactive terminal prompts.
+*   **Security**: Uses secure local file system operations to read directories and streams file metadata without storing raw source code locally.
+
+## 🚀 Core Features
+
+*   **Local Secret Auditing**: Scans files locally for sensitive secrets (API keys, private tokens) before they ever leave the developer's computer.
+*   **Instant Docs Generation**: Generates Markdown documentation for any selected local directory and outputs it directly to your project's docs folder.
+*   **Simple Authentication**: Authenticates with your secure Doxynix SaaS account via a lightweight token-based configuration (`doxynix login`).

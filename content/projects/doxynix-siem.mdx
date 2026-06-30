@@ -1,0 +1,33 @@
+---
+title: "doxynix/siem"
+description: "An application-level Security Information and Event Management (SIEM) and DLP anomaly detection engine for the Doxynix SaaS platform, powered by Axiom logging."
+date: "2026-06-30"
+url: "https://sec.doxynix.space"
+repository: "doxynix/siem"
+published: true
+---
+
+# Doxynix SIEM & LeakGuard
+
+Doxynix SIEM is a lightweight, high-performance, and secure application-level telemetry and security monitoring console designed specifically to safeguard the Doxynix SaaS platform from internal and external threats.
+
+By pulling structured production logs directly from the cloud-native logging platform **Axiom** via REST APIs, it acts as a real-time Security Operations Center (SOC) dashboard.
+
+## 🛠️ Architecture & Modern Stack
+
+The SIEM module is built as an ultra-fast, modern monorepo using bleeding-edge tooling:
+
+*   **Runtime & Workspaces**: Bun Workspaces (monorepo) and Turborepo for lightning-fast build caching and type-checks.
+*   **Backend**: Hono (Lightweight Web-standards framework) running on Bun.
+*   **Frontend**: Vite, React 19, Tailwind CSS v4, and TanStack Router/Query.
+*   **Database**: PostgreSQL managed via **Drizzle ORM** (TS-first lightweight SQL builder) and `drizzle-kit`.
+*   **Type Safety**: Strictly typed, shared data contract (`@doxynix/siem-shared`) between the client and server.
+
+## 🛡️ Security Heuristics & Threat Detection
+
+Doxynix SIEM correlates Axiom logs and evaluates them against custom, high-speed security rules:
+
+1.  **DLP Secret Scanner (LeakGuard)**: Scans incoming logs for leaked credentials, credit cards, or private SSH keys, automatically logging security incidents with line-specific indicators.
+2.  **Insider Threat / Data Harvesting**: Monitors user file reads. If a single user requests analysis on an anomalous number of private repositories in a short window, the system flags a high-severity alert.
+3.  **Billing Protection (LLM Token Abuse)**: Tracks token consumption rates per IP to block DoS-style billing drain attacks.
+4.  **Least Privilege Design**: The SIEM integration token uses strict "Query-Only" permissions, preventing log tampering (Log deletion/trimming) even in the event of a server breach.

@@ -1,0 +1,22 @@
+---
+title: "Car Shooter (WPF)"
+description: "A dynamic 2D desktop shooter built to explore declarative state management (MVVM), spatial partitioning algorithms, and high-FPS UI rendering."
+date: "2026-04-01"
+repository: "Kramarich0/CarShooterGame"
+published: true
+---
+
+# WPF Car Shooter
+
+A desktop action game built with C# and WPF to experiment with **reactive UI state-binding** and complex coordinate mathematics under heavy UI loads.
+
+## 🛠️ Architecture & UI Optimizations
+
+*   **State-Driven UI (MVVM)**: Modeled closely after React-style state management, utilizing declarative data binding and property notification loops (`INotifyPropertyChanged`) to bind game states to XAML render layers.
+*   **Spatial Hashing Grid (Performance)**: Implemented a custom 2D coordinate grid partition (`spatialGrid`) to optimize collision metrics. Instead of slow $O(N^2)$ checks, the UI engine instantly groups objects into 200px cells, keeping rendering calculations ultra-low.
+*   **Asynchronous Threading**: Offloaded ballistic physics and coordinate logic to background tasks, keeping the UI rendering loop strictly at 60 FPS.
+
+## 🚀 Key Client Challenges Solved
+
+*   **Modular Component Spawning**: Procedural generation system placing active power-ups and static map objects dynamically, ensuring zero overlapping.
+*   **Reactive Reloading Engine**: Created state-driven timers to handle weapon cooldowns, updating the client HUD elements instantly with clean user feedback.

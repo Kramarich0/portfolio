@@ -1,0 +1,25 @@
+---
+title: "doxynix-action"
+description: "Official GitHub Action to automate codebase auditing, documentation updates, and data-leak checks on every pull request within your CI/CD pipeline."
+date: "2026-06-25"
+repository: "doxynix/action"
+published: true
+---
+
+# Doxynix GitHub Action
+
+`doxynix-action` is the official, production-ready GitHub Action designed to automate the entire documentation and security auditing pipeline directly inside your CI/CD workflows. 
+
+By running automatically on every Pull Request or push to specified branches, it ensures that your team's code documentation is always up-to-date and completely free of leaked credentials before merging.
+
+## 🛠️ How It Works
+
+*   **Runtime**: A lightweight Node.js-based GitHub Action wrapper optimized for fast runner execution times.
+*   **GitHub Integration**: Seamlessly interacts with the GitHub REST API and Webhooks to receive repository context, PR numbers, and code diffs.
+*   **Security Gates**: Acts as a continuous security gatekeeper. If a developer accidentally introduces a private API key, the Action flags it, comments on the specific PR line, and can be configured to fail the build.
+
+## 🚀 Key Features
+
+*   **PR Automated Reviews**: Generates and posts inline PR comments explaining code changes or highlighting security alerts.
+*   **Continuous Documentation**: Re-generates codebase documentation on every merge to the `main` branch, ensuring your Doxynix SaaS dashboard is always in sync with your production code.
+*   **Easy Setup**: Fully configurable with a simple `.github/workflows/doxynix.yml` file using secrets injection for secure token management.

@@ -1,0 +1,27 @@
+---
+title: "SharkFlow"
+description: "A comprehensive task, board, and workflow management ecosystem featuring a solid TypeScript API backend, React Web Client, and a native Kotlin mobile client."
+date: "2026-04-13"
+repository: "Kramarich0/SharkFlow"
+published: true
+---
+
+# SharkFlow Ecosystem
+
+SharkFlow is a multi-platform, real-time board and task management application designed to optimize developer workflows and project tracking. 
+
+Unlike simple todo-apps, SharkFlow is a fully featured ecosystem that synchronizes boards, tasks, user roles, and live notifications across web and mobile environments.
+
+## 🛠️ Technical Breakdown
+
+The ecosystem is split into three main modules:
+
+*   **SharkFlow-API (Backend)**: Built with Express, Prisma ORM, and PostgreSQL. It utilizes Redis for session management and fast caching of active boards.
+*   **SharkFlow Web (Client)**: A highly interactive React application with drag-and-drop board kanbans, real-time sync, and fluid Tailwind CSS layouts.
+*   **SharkFlowMobile (Kotlin App)**: A native Android application written in Kotlin, implementing modern Jetpack Architecture (ViewModel, LiveData, Coroutines) and secure state synchronization with the centralized API.
+
+## 🚀 Key Architectural Highlights
+
+*   **Multi-Platform Synchronization**: Ensures that any task moved on the React Web Kanban board is instantly updated on the native Android mobile app via WebSocket streams and Redis pub/sub.
+*   **Prisma Database Modeling**: Designed a robust relational database schema handling complex many-to-many relationships (users to boards, tasks to subtasks) with proper indexing.
+*   **Clean Architecture**: Deep separation of concerns, ensuring the Kotlin mobile app and React web app consume the same structured JSON REST API securely.
