@@ -29,7 +29,7 @@ async function getGitHubRepoData(repository: string): Promise<GitHubRepoData> {
         Authorization: process.env.GITHUB_TOKEN ? `Bearer ${process.env.GITHUB_TOKEN}` : "",
         "User-Agent": "Kramarich-Portfolio",
       },
-      next: { revalidate: 3600 }, // Кэшируем данные на 1 час
+      next: { revalidate: 3600 },
     });
 
     if (!response.ok) {
