@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
-// Наш живой статус из VS Code через WakaTime
 const CodingStatus: React.FC = () => {
 	const [status, setStatus] = useState<{
 		active: boolean;
@@ -29,7 +28,7 @@ const CodingStatus: React.FC = () => {
 		};
 
 		fetchStatus();
-		const interval = setInterval(fetchStatus, 60000); // Опрашиваем раз в минуту
+		const interval = setInterval(fetchStatus, 60000);
 		return () => clearInterval(interval);
 	}, []);
 
