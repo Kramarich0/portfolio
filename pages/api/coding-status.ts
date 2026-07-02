@@ -16,7 +16,13 @@ export default async function handler(): Promise<NextResponse> {
   try {
     const base64Key = btoa(apiKey);
 
-    const response = await fetch("https://wakatime.com/api/v1/users/current/heartbeats", {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const dateParam = `${year}-${month}-${day}`;
+
+    const response = await fetch(`https://wakatime.com/api/v1/users/current/heartbeats?date=${dateParam}`, {
       headers: {
         Authorization: `Basic ${base64Key}`,
       },
@@ -54,6 +60,7 @@ export default async function handler(): Promise<NextResponse> {
       { status: 200, headers: { "content-type": "application/json" } }
     );
   } catch (error) {
+    console.error("Error:", error)
     return new NextResponse(
       JSON.stringify({ active: false, error: "Internal server error" }),
       { status: 500, headers: { "content-type": "application/json" } }
